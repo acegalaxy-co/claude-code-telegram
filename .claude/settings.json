@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check *)",
+      "Bash(node --version)",
+      "Bash(npm view *)",
+      "Bash(npm publish)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push origin main)",
+      "Bash(git rm --cached *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(cat .env.example)",
+      "Bash(cat package.json)",
+      "Bash(cat CHANGELOG.md)",
+      "Bash(wc -l *)",
+      "Bash(ssh aws-prod *)"
+    ],
+    "deny": [
+      "Bash(cat .env)",
+      "Bash(cat **/.env)",
+      "Bash(scp *)",
+      "Bash(rsync *)"
+    ]
+  }
+}
