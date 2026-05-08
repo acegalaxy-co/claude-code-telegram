@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.2.0] - 2026-05-09
+
+### Added — security UX
+
+- **Brute-force detection** — 5 access denies from the same chat within 5min triggers a DM alert to every `TELEGRAM_ADMIN_CHAT_IDS` chat (rate-limited 15min between alerts). Records an `alert.bruteforce` audit event.
+- **`session.reset` audit event** — `/new` now emits a dedicated event with `cli`, `project`, and the previous session-id prefix.
+
+### Fixed
+
+- **`/audit` rendering** — truncate at line boundary (not character) before HTML-escape, so output is never split mid-entity. Shows "… (N earlier event(s) elided)" when capping.
+
 ## [2.1.1] - 2026-05-09
 
 ### Fixed — security hardening
