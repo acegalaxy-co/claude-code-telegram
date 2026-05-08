@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.1] - 2026-05-09
+
+### Fixed — security hardening
+
+- **Audit log perms 0600** — created/chmod'd to owner-only.
+- **Audit log rotation** — rotates at 50MB, keeps `.audit.log.{1,2,3}`.
+- **`dispatch` event no longer logs absolute `cwd`** — only project name (avoids leaking filesystem layout via the audit ring).
+- **`error` event truncated** — `e.message` capped at 200 chars; stack dropped, only `name` kept (avoids accidentally leaking paths/prompt fragments through error strings).
+- **Project ACL enforced on session bootstrap** — persisted/`DEFAULT_PROJECT` resolution now respects `TELEGRAM_PROJECT_ACL`, not just the `/project` switch path.
+
 ## [2.1.0] - 2026-05-09
 
 ### Added — security & audit

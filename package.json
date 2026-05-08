@@ -1,6 +1,6 @@
 {
   "name": "@acegalaxy/claude-code-telegram",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Use Claude Code (and Codex / DeepSeek / Gemini) from Telegram. Tiny bridge: text + voice in, real-time stream out, full .claude/ harness per project. Switch CLI mid-chat with /cli, switch project with /project. One npm install.",
   "keywords": [
     "telegram",
