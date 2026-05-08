@@ -1,0 +1,58 @@
+{
+  "name": "@acegalaxy/claude-code-telegram",
+  "version": "2.0.0",
+  "description": "Use Claude Code (and Codex / DeepSeek / Gemini) from Telegram. Tiny bridge: text + voice in, real-time stream out, full .claude/ harness per project. Switch CLI mid-chat with /cli, switch project with /project. One npm install.",
+  "keywords": [
+    "telegram",
+    "telegram-bot",
+    "claude",
+    "claude-code",
+    "anthropic",
+    "codex",
+    "openai",
+    "deepseek",
+    "gemini",
+    "ai-cli",
+    "coding-agent",
+    "whisper",
+    "voice",
+    "ai-bot",
+    "cli-bridge"
+  ],
+  "license": "MIT",
+  "author": "ACE Galaxy <hello@acegalaxy.co>",
+  "homepage": "https://github.com/acegalaxy-co/claude-code-telegram#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acegalaxy-co/claude-code-telegram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acegalaxy-co/claude-code-telegram/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "bin/cli.mjs",
+  "bin": {
+    "claude-code-telegram": "bin/cli.mjs"
+  },
+  "scripts": {
+    "start": "node bin/cli.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    ".env.example"
+  ]
+}
