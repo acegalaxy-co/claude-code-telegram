@@ -27,5 +27,23 @@
       "Bash(scp *)",
       "Bash(rsync *)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/pre-edit-secret-scan.sh" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": ".claude/hooks/post-edit-syntax-check.sh" }
+        ]
+      }
+    ]
   }
 }
