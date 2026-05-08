@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0] - 2026-05-09
+
+### Added — security & audit
+
+- **Append-only audit log** at `<STATE_DIR>/.audit.log` (JSONL). Records `auth.allow|deny.{chat,user,project}`, `ratelimit.{text,voice}`, `dispatch`, `redact`, `voice.{reject,transcribe}`, `command`, `cli.switch`, `project.switch`, `error`, `startup`. Prompts are stored as SHA-256 prefix + length only — never raw content.
+- **`TELEGRAM_ALLOWED_USER_IDS`** — optional second gate, evaluated after chat allowlist. Recommended for group chats.
+- **`TELEGRAM_BLOCKED_USER_IDS`** — explicit denylist, always wins.
+- **`TELEGRAM_ADMIN_CHAT_IDS`** — chats permitted to invoke `/audit`.
+- **`TELEGRAM_PROJECT_ACL`** — per-chat project allowlist (`{chat_id:[projects]}`) enforced on `/project` switch.
+- **`/audit [N]`** — admin-only Telegram command to dump the last N (≤50) audit events.
+- **Startup security report** — prints all weak/missing config lines (no user allowlist, no admin set, anon mode, etc.) and emits a `startup` audit event with config sizes.
+
 ## [2.0.1] - 2026-05-08
 
 ### Fixed
