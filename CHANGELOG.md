@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1] - 2026-05-08
+
+### Fixed
+- **Codex CLI 0.129+ JSON event shapes** — runner now parses `thread.started`, `turn.started`, `item.completed` (`agent_message` / `reasoning` / `command_execution`), `turn.completed` in addition to the legacy `AgentMessage` / `TaskComplete` shapes. Previously Codex output rendered as `(no response)` because no events matched.
+- **Codex prompt invocation** — pass prompt via stdin instead of `--` positional argv, avoiding quoting issues.
+- **Filter Codex internal `Reconnecting...` warnings** — they fire while the agent is still working and aren't user-facing errors.
+
 ## [2.0.0] - 2026-05-08
 
 Initial public snapshot under `@acegalaxy/claude-code-telegram@2.x`.
